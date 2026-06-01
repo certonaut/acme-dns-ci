@@ -34,12 +34,12 @@ jobs:
 
     steps:
       - name: Checkout ci repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: certonaut-ci
 
       - name: Checkout acme-dns repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: 'joohoi/acme-dns'
           path: acme-dns
