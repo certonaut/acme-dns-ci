@@ -1,12 +1,10 @@
 # Derived from github.com/joohoi/acme-dns, but builds locally
 FROM golang:alpine AS builder
 
-RUN apk add --update gcc musl-dev git
-
 ENV GOPATH /tmp/buildcache
 COPY . /tmp/acme-dns
 WORKDIR /tmp/acme-dns
-RUN CGO_ENABLED=1 go build
+RUN go build
 
 FROM alpine:latest
 
